@@ -18,6 +18,8 @@ import LinkPlugin from '@ckeditor/ckeditor5-link/src/link'
 import ParagraphPlugin from '@ckeditor/ckeditor5-paragraph/src/paragraph'
 import Aligment from '@ckeditor/ckeditor5-alignment/src/alignment'
 
+import Card from '@/component/card'
+
 export default {
 	name: 'App',
 	data() {
@@ -31,7 +33,8 @@ export default {
 					ItalicPlugin,
 					BoldPlugin,
 					LinkPlugin,
-					ParagraphPlugin
+					ParagraphPlugin,
+					Card
 				],
 				link: {
 					decorators: {
@@ -48,7 +51,7 @@ export default {
 					options: ['left', 'right', 'center']
 				},
 				toolbar: {
-					items: ['bold', 'alignment', 'italic', 'link']
+					items: ['bold', 'alignment', 'italic', 'link', 'insertImage']
 				}
 			}
 		}
