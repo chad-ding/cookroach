@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import BBSEditor from '@/component/bbs-editor'
+import BBSEditor from '@/bbs-editor'
 
 export default {
 	name: 'App',
