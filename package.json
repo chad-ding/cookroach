@@ -1,0 +1,63 @@
+{
+	"name": "gamehelper-bbs-creator",
+	"version": "0.1.0",
+	"private": true,
+	"scripts": {
+		"serve": "vue-cli-service serve",
+		"build": "vue-cli-service build",
+		"lint": "vue-cli-service lint"
+	},
+	"dependencies": {
+		"@ckeditor/ckeditor5-basic-styles": "^21.0.0",
+		"@ckeditor/ckeditor5-editor-classic": "^21.0.0",
+		"@ckeditor/ckeditor5-essentials": "^21.0.0",
+		"@ckeditor/ckeditor5-link": "^21.0.0",
+		"@ckeditor/ckeditor5-paragraph": "^21.0.0",
+		"@ckeditor/ckeditor5-theme-lark": "^21.0.0",
+		"@ckeditor/ckeditor5-vue": "^1.0.1",
+		"axios": "^0.19.2",
+		"core-js": "^3.6.5",
+		"vue": "^2.6.11"
+	},
+	"devDependencies": {
+		"@ckeditor/ckeditor5-dev-utils": "^23.1.1",
+		"@ckeditor/ckeditor5-dev-webpack-plugin": "^23.1.1",
+		"@vue/cli-plugin-babel": "~4.5.0",
+		"@vue/cli-plugin-eslint": "~4.5.0",
+		"@vue/cli-service": "~4.5.0",
+		"babel-eslint": "^10.1.0",
+		"eslint": "^6.7.2",
+		"eslint-config-standard": "^14.1.1",
+		"eslint-plugin-html": "^6.0.3",
+		"eslint-plugin-import": "^2.22.0",
+		"eslint-plugin-node": "^11.1.0",
+		"eslint-plugin-promise": "^4.2.1",
+		"eslint-plugin-standard": "^4.0.1",
+		"eslint-plugin-vue": "^6.2.2",
+		"less": "^3.12.2",
+		"less-loader": "^6.2.0",
+		"postcss-loader": "^3.0.0",
+		"raw-loader": "^0.5.1",
+		"style-loader": "^1.2.1",
+		"vue-template-compiler": "^2.6.11"
+	},
+	"eslintConfig": {
+		"root": true,
+		"env": {
+			"node": true
+		},
+		"extends": [
+			"plugin:vue/essential",
+			"eslint:recommended"
+		],
+		"parserOptions": {
+			"parser": "babel-eslint"
+		},
+		"rules": {}
+	},
+	"browserslist": [
+		"> 1%",
+		"last 2 versions",
+		"not dead"
+	]
+}
