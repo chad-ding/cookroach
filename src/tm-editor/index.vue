@@ -3,17 +3,20 @@
 		<div id="tiny-mce-editor" />
 	</div>
 </template>
+<style lang="less" scoped>
+@import '../../node_modules/tinymce/skins/ui/oxide/skin.min.css';
+@import '../../node_modules/tinymce/skins/content/default/content.min.css';
+</style>
 
 <script>
 import Tinymce from 'tinymce/tinymce'
 import 'tinymce/themes/silver'
 import 'tinymce/icons/default'
-import 'tinymce/skins/ui/oxide/skin.min.css'
 import '../lib/zh_CN'
 
+import 'tinymce/plugins/code'
 import 'tinymce/plugins/autoresize'
 import 'tinymce/plugins/anchor'
-import 'tinymce/plugins/print'
 import 'tinymce/plugins/image'
 import 'tinymce/plugins/link'
 import 'tinymce/plugins/advlist'
@@ -33,7 +36,7 @@ const config = {
 	resize: false,
 	statusbar: false,
 	language: 'zh_CN',
-	plugins: ['autoresize', 'emoticons', 'advlist link image charmap print anchor', 'searchreplace visualblocks', 'paste wordcount'],
+	plugins: ['autoresize', 'emoticons', 'advlist link image charmap anchor', 'searchreplace visualblocks', 'paste wordcount code'],
 	toolbar: 'card | bold italic forecolor | alignleft aligncenter alignright alignjustify | emoticons',
 	setup: function(editor) {
 		editor.ui.registry.addButton('card', {

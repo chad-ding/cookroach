@@ -3,6 +3,7 @@
 	"version": "0.1.0",
 	"private": true,
 	"scripts": {
+		"init": "mkdir public/js && cp -r node_modules/tinymce/skins public/js/skins",
 		"serve": "vue-cli-service serve",
 		"build": "vue-cli-service build",
 		"lint": "vue-cli-service lint"
@@ -38,6 +39,7 @@
 		"eslint-plugin-promise": "^4.2.1",
 		"eslint-plugin-standard": "^4.0.1",
 		"eslint-plugin-vue": "^6.2.2",
+		"file-loader": "^6.0.0",
 		"less": "^3.12.2",
 		"less-loader": "^6.2.0",
 		"postcss-loader": "^3.0.0",
