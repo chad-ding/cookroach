@@ -1,17 +1,27 @@
 <template>
 	<div id="app">
-		<div>
-			<ck-editor v-if="editorType === 'ck'" />
-			<tm-editor v-if="editorType === 'tm'" />
-			<fr-editor v-else />
-		</div>
-		<div>
-			<button class="btn">提交</button>
+		<div class="content">
+			<div>
+				<ck-editor v-if="editorType === 'ck'" ref="ckeditor" />
+				<tm-editor v-if="editorType === 'tm'" ref="tmeditor" />
+				<fr-editor v-else ref="freditor" />
+			</div>
+			<div>
+				<button class="btn" @click="onClick">提交</button>
+			</div>
 		</div>
 	</div>
 </template>
 
 <style lang="less" scoped>
+#app {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+.content {
+	width: 1080px;
+}
 .btn {
 	color: #fff;
 	background-color: #337ab7;
@@ -51,6 +61,11 @@ export default {
 	data() {
 		return {
 			editorType: 'tm'
+		}
+	},
+	methods: {
+		onClick() {
+			this.$refs.tmeditor.getContent()
 		}
 	}
 }
