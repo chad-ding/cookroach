@@ -1,16 +1,24 @@
 <template>
 	<div id="app">
-		<bbs-editor />
+		<ck-editor v-if="editorType === 'ck'" />
+		<fr-editor v-else />
 	</div>
 </template>
 
 <script>
-import BBSEditor from '@/bbs-editor'
+import CKEditor from '@/ck-editor'
+import FREditor from '@/fr-editor'
 
 export default {
 	name: 'App',
 	components: {
-		'bbs-editor': BBSEditor
+		'ck-editor': CKEditor,
+		'fr-editor': FREditor
+	},
+	data() {
+		return {
+			editorType: 'fr'
+		}
 	}
 }
 </script>

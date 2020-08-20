@@ -1,5 +1,5 @@
 <template>
-	<div id="app">
+	<div>
 		<ckeditor
 			ref="ckeditor"
 			v-model="editorData"
@@ -18,7 +18,7 @@ import LinkPlugin from '@ckeditor/ckeditor5-link/src/link'
 import ParagraphPlugin from '@ckeditor/ckeditor5-paragraph/src/paragraph'
 import Aligment from '@ckeditor/ckeditor5-alignment/src/alignment'
 
-import Card from '@/component/card'
+import Card from '@/component/ck-card'
 
 export default {
 	name: 'App',

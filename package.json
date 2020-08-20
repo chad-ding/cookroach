@@ -18,6 +18,7 @@
 		"@ckeditor/ckeditor5-vue": "^1.0.1",
 		"axios": "^0.19.2",
 		"core-js": "^3.6.5",
+		"froala-editor": "^3.2.1",
 		"vue": "^2.6.11"
 	},
 	"devDependencies": {
