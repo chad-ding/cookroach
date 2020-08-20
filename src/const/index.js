@@ -1,0 +1,1 @@
+export const TINY_MCE_KEY = '5zximt9kdwd25xto1ao24gclv6ymigyhydl3icnf1k749hup'
