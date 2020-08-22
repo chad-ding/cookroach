@@ -4,29 +4,17 @@
 	"private": true,
 	"scripts": {
 		"init": "mkdir public/js && cp -r node_modules/tinymce/skins public/js/skins",
-		"serve": "vue-cli-service serve",
+		"start": "vue-cli-service serve --open",
 		"build": "vue-cli-service build",
 		"lint": "vue-cli-service lint"
 	},
 	"dependencies": {
-		"@ckeditor/ckeditor5-alignment": "^21.0.0",
-		"@ckeditor/ckeditor5-basic-styles": "^21.0.0",
-		"@ckeditor/ckeditor5-editor-classic": "^21.0.0",
-		"@ckeditor/ckeditor5-essentials": "^21.0.0",
-		"@ckeditor/ckeditor5-link": "^21.0.0",
-		"@ckeditor/ckeditor5-paragraph": "^21.0.0",
-		"@ckeditor/ckeditor5-theme-lark": "^21.0.0",
-		"@ckeditor/ckeditor5-vue": "^1.0.1",
-		"@tinymce/tinymce-vue": "^3.2.2",
 		"axios": "^0.19.2",
 		"core-js": "^3.6.5",
-		"froala-editor": "^3.2.1",
 		"tinymce": "^5.4.2",
 		"vue": "^2.6.11"
 	},
 	"devDependencies": {
-		"@ckeditor/ckeditor5-dev-utils": "^23.1.1",
-		"@ckeditor/ckeditor5-dev-webpack-plugin": "^23.1.1",
 		"@vue/cli-plugin-babel": "~4.5.0",
 		"@vue/cli-plugin-eslint": "~4.5.0",
 		"@vue/cli-service": "~4.5.0",

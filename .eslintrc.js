@@ -30,7 +30,7 @@ module.exports = {
 		'space-before-function-paren': 0,
 		indent: ['warn', 'tab', { SwitchCase: 1 }],
 		'no-tabs': ['error', { allowIndentationTabs: true }],
-		'no-console': ['warn'],
+		'no-console': ['warn', { allow: ['debug', 'info', 'warn', 'error'] }],
 		'no-unused-vars': [
 			'warn',
 			{

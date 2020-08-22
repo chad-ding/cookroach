@@ -2,9 +2,7 @@
 	<div id="app">
 		<div class="content">
 			<div>
-				<ck-editor v-if="editorType === 'ck'" ref="ckeditor" />
-				<tm-editor v-if="editorType === 'tm'" ref="tmeditor" />
-				<fr-editor v-else ref="freditor" />
+				<tm-editor ref="tmeditor" />
 			</div>
 			<div>
 				<button class="btn" @click="onClick('full')">查看全部内容</button>
@@ -51,15 +49,11 @@
 </style>
 
 <script>
-import CKEditor from '@/ck-editor'
-import FREditor from '@/fr-editor'
 import TMEditor from '@/tm-editor'
 
 export default {
 	name: 'App',
 	components: {
-		'ck-editor': CKEditor,
-		'fr-editor': FREditor,
 		'tm-editor': TMEditor
 	},
 	data() {
