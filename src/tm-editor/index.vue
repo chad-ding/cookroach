@@ -34,15 +34,20 @@ const config = {
 	statusbar: false,
 	language: 'zh_CN',
 	inline_boundaries: false,
+	contextmenu_never_use_native: true,
+	toolbar_sticky: true,
+	paste_block_drop: true,
+	placeholder: '请输入内容',
 	content_css: './__editor-content.css',
 	plugins: [
 		'autoresize',
 		'emoticons',
-		'advlist link image charmap anchor',
+		'advlist image charmap anchor',
 		'searchreplace visualblocks',
 		'paste wordcount code'
 	],
-	toolbar: 'bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | emoticons forecolor card'
+	toolbar:
+		'bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | emoticons forecolor card'
 }
 
 export default {
@@ -54,9 +59,7 @@ export default {
 	},
 
 	mounted() {
-		const self = this
 		function setup(editor) {
-			self.editor = editor
 			editor.ui.registry.addIcon('gameCard', gameIcon)
 
 			editor.ui.registry.addButton('card', {
@@ -76,8 +79,19 @@ export default {
 		Tinymce.init({
 			selector: '#tiny-mce-editor',
 			setup,
+			paste_preprocess: function(plugin, args) {
+				const { content } = args
+				console.info(content)
+			},
 			...config
 		})
+			.then((editors) => {
+				this.editor = editors[0]
+			})
+			.catch((e) => {
+				console.info('初始化编辑器失败')
+				console.error(e.message)
+			})
 	},
 	methods: {
 		getContent(type) {
