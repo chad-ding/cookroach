@@ -33,7 +33,15 @@ const config = {
 	resize: false,
 	statusbar: false,
 	language: 'zh_CN',
-	plugins: ['autoresize', 'emoticons', 'advlist link image charmap anchor', 'searchreplace visualblocks', 'paste wordcount code'],
+	inline_boundaries: false,
+	content_css: './__editor-content.css',
+	plugins: [
+		'autoresize',
+		'emoticons',
+		'advlist link image charmap anchor',
+		'searchreplace visualblocks',
+		'paste wordcount code'
+	],
 	toolbar: 'bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | emoticons forecolor card'
 }
 
@@ -49,10 +57,7 @@ export default {
 		const self = this
 		function setup(editor) {
 			self.editor = editor
-			editor.ui.registry.addIcon(
-				'gameCard',
-				gameIcon
-			)
+			editor.ui.registry.addIcon('gameCard', gameIcon)
 
 			editor.ui.registry.addButton('card', {
 				icon: 'gameCard',

@@ -1,0 +1,10 @@
+/**
+ * 编辑器默认样式
+*/
+body {
+    color: red;
+}
+p {
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
