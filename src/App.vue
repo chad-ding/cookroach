@@ -12,42 +12,6 @@
 	</div>
 </template>
 
-<style lang="less" scoped>
-#app {
-	width: 100%;
-	display: flex;
-	justify-content: center;
-}
-.content {
-	width: 1080px;
-}
-.btn {
-	&:first-child {
-		margin-right: 30px;
-	}
-	color: #fff;
-	background-color: #337ab7;
-	border-color: #2e6da4;
-	margin-top: 5px;
-	margin-bottom: 5px;
-	display: inline-block;
-	padding: 6px 12px;
-	margin-bottom: 0;
-	font-size: 14px;
-	font-weight: 400;
-	line-height: 1.42857143;
-	text-align: center;
-	white-space: nowrap;
-	vertical-align: middle;
-	touch-action: manipulation;
-	cursor: pointer;
-	user-select: none;
-	background-image: none;
-	border: 1px solid transparent;
-	border-radius: 4px;
-}
-</style>
-
 <script>
 import TMEditor from '@/tm-editor'
 
@@ -68,3 +32,42 @@ export default {
 	}
 }
 </script>
+
+<style lang="less" scoped>
+#app {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+}
+
+.content {
+	width: 1080px;
+}
+
+.btn {
+	background-color: #337ab7;
+	background-image: none;
+	border: 1px solid transparent;
+	border-color: #2e6da4;
+	border-radius: 4px;
+	color: #fff;
+	cursor: pointer;
+	display: inline-block;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 1.42857143;
+	margin-bottom: 5px;
+	margin-bottom: 0;
+	margin-top: 5px;
+	padding: 6px 12px;
+	text-align: center;
+	touch-action: manipulation;
+	user-select: none;
+	vertical-align: middle;
+	white-space: nowrap;
+
+	&:first-child {
+		margin-right: 30px;
+	}
+}
+</style>

@@ -65,7 +65,7 @@ export default {
 			editor.ui.registry.addButton('card', {
 				icon: 'gameCard',
 				tooltip: '卡片',
-				onAction: function() {
+				onAction: function () {
 					const template = `
 								<div style="padding: 15px;margin-bottom: 20px;border: 1px solid transparent;border-radius: 4px;border-color: #bce8f1;background-color: #d9edf7;color: #31708f;" contenteditable="false">
 									hello world
@@ -79,16 +79,16 @@ export default {
 		Tinymce.init({
 			selector: '#tiny-mce-editor',
 			setup,
-			paste_preprocess: function(plugin, args) {
+			paste_preprocess: function (plugin, args) {
 				const { content } = args
 				console.info(content)
 			},
 			...config
 		})
-			.then((editors) => {
+			.then(editors => {
 				this.editor = editors[0]
 			})
-			.catch((e) => {
+			.catch(e => {
 				console.info('初始化编辑器失败')
 				console.error(e.message)
 			})
