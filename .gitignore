@@ -16,7 +16,6 @@ pnpm-debug.log*
 
 # Editor directories and files
 .idea
-.vscode
 *.suo
 *.ntvs*
 *.njsproj
@@ -35,10 +34,6 @@ node_modules
 !/.stylelintrc.js
 
 !/commitlint.config.js
-
-!/.vscode/settings.json
-
-!/.vscode/extensions.json
 
 !/.gitignore
 
