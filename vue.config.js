@@ -1,4 +1,15 @@
+const AssetsCallbackWebpackPlugin = require('./plugin/index')
+
 module.exports = {
+	configureWebpack: config => {
+		config.plugins.push(
+			new AssetsCallbackWebpackPlugin({
+				callbackScript: "<script>window.report = function(){console.log('111111')}</script>",
+				onLoadCallbackName: 'report',
+				onErrorCallbackName: 'report'
+			})
+		)
+	},
 	chainWebpack: config => {
 		const svgRule = config.module.rule('svg')
 
