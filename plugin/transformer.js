@@ -1,6 +1,6 @@
-const { parse, valid } = require('node-html-parser')
+const { parse } = require('node-html-parser')
 
-const { isNull } = require('./is')
+const { isNull, isString } = require('./is')
 const logger = require('./logger')
 
 const config = {
@@ -87,7 +87,7 @@ module.exports = {
 				attributes.onload = `${onLoadCallbackName} && ${onLoadCallbackName}(this)`
 			}
 			if (!isNull(onErrorCallbackName)) {
-				attributes.onerror = `${onLoadCallbackName} && ${onErrorCallbackName}(this)`
+				attributes.onerror = `${onErrorCallbackName} && ${onErrorCallbackName}(this)`
 			}
 		})
 
@@ -96,16 +96,19 @@ module.exports = {
 
 	processHtml(input, options) {
 		logger.info('处理html模板...')
-		if (!valid(input, config)) {
+
+		let html
+		try {
+			html = parse(input, config)
+		} catch (e) {
 			logger.error('解析html失败')
+			logger.error(e)
+
 			return input
 		}
 
-		const html = parse(input)
-
 		const scripts = html.getElementsByTagName('script')
-
-		const { callbackScript, onLoadCallbackName, onErrorCallbackName } = options
+		const { callbackScript, onLoadCallbackName, onErrorCallbackName, indexCallback } = options
 
 		if (scripts.length === 0) {
 			const node = parse(callbackScript)
@@ -145,6 +148,12 @@ module.exports = {
 			if (existReportNode) {
 				existReportNode.remove()
 			}
+		}
+
+		// 如果有index上报代码，插入在第一个位置
+		if (isString(indexCallback)) {
+			const firstScript = html.getElementsByTagName('script')[0]
+			firstScript.insertAdjacentHTML('beforebegin', indexCallback)
 		}
 
 		return html.toString()

@@ -61,20 +61,24 @@ class AssetsCallbackWebpackPlugin {
 	apply(compiler) {
 		const pluginName = 'AssetsCallbackWebpackPlugin'
 
+		// html-webpack-plugin版本4及以上
 		if (HtmlWebpackPlugin.getHooks) {
-			compiler.hooks.compilation.tap('HtmlWebpackInjectorPlugin', compilation => {
-				logger.info('挂载钩子方法...')
+			// 使用compilation会执行两次
+			compiler.hooks.thisCompilation.tap(pluginName, compilation => {
+				logger.info('v4挂载钩子方法...')
 
 				HtmlWebpackPlugin.getHooks(compilation).afterTemplateExecution.tapAsync(pluginName, (data, cb) => {
 					logger.info('开始执行任务...')
 
-					// 对html模板进行处理
 					cb(null, transformer.process(data, this.options))
 				})
 			})
 		} else {
+			logger.info('v3挂载钩子方法...')
 			compiler.plugin('compilation', compilation => {
-				compilation.plugin('html-webpack-plugin-after-html-processing', (data, cb) => {
+				compilation.plugin('html-webpack-plugin-after-html-processing', data => {
+					logger.info('开始执行任务...')
+
 					data.html = transformer.processHtml(data.html, this.options)
 				})
 			})
